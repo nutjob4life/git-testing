@@ -16,6 +16,10 @@ jobs:
                     echo "Event name: ${GITHUB_EVENT_NAME}"
                     echo "Workspace: ${GITHUB_WORKSPACE}"
                     echo "SHA and ref: ${GITHUB_SHA}, ${GITHUB_REF:-nope}"
+                    echo "→ Tags description:"
+                    git describe --tags ||:
+                    echo "→ All description:"
+                    git describe --all ||:
                 env:
                     MY_OWN_ENV_VAR: Gerald
 
