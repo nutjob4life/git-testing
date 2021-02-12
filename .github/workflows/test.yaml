@@ -10,7 +10,12 @@ jobs:
             -
                 name: ✍️ Logging it
                 run: |
-                    echo "${MY_OWN_ENV_VAR} Workflow: ${GITHUB_WORKFLOW}"
+                    echo "A set variable: ${MY_OWN_ENV_VAR} and an unset one: ${MY_OTHER_ENV_VAR:-nope}"
+                    echo "Workflow: ${GITHUB_WORKFLOW}"
+                    echo "Repository + owner: ${GITHUB_REPOSITORY}"
+                    echo "Event name: ${GITHUB_EVENT_NAME}"
+                    echo "Workspace: ${GITHUB_WORKSPACE}"
+                    echo "SHA and ref: ${GITHUB_SHA}, ${GITHUB_REF:-nope}"
                 env:
                     MY_OWN_ENV_VAR: Gerald
 
