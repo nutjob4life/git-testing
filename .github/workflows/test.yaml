@@ -1,0 +1,16 @@
+---
+name: 🧪 Testing Stuff
+
+on: push
+jobs:
+    loggit:
+        name: 🪵 Loggit
+        runs-on: ubuntu-latest
+        steps:
+            -
+                name: ✍️ Logging it
+                run: |
+                    echo "Workflow:" ${GITHUB_WORKFLOW}
+
+
+...
