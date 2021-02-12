@@ -20,6 +20,8 @@ jobs:
                     git describe --tags ||:
                     echo "→ All description:"
                     git describe --all ||:
+                    echo "→ Branch:"
+                    git branch --show-current
                 env:
                     MY_OWN_ENV_VAR: Gerald
 
