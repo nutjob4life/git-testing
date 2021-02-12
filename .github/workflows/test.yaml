@@ -10,7 +10,8 @@ jobs:
             -
                 name: ✍️ Logging it
                 run: |
-                    echo "Workflow:" ${GITHUB_WORKFLOW}
-
+                    echo "${MY_OWN_ENV_VAR} Workflow: ${GITHUB_WORKFLOW}"
+                env:
+                    MY_OWN_ENV_VAR: Gerald
 
 ...
