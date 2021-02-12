@@ -8,6 +8,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             -
+                name: 💳 Checkout
+                with: actions/checkout@v2
+            -
                 name: ✍️ Logging it
                 run: |
                     echo "A set variable: ${MY_OWN_ENV_VAR} and an unset one: ${MY_OTHER_ENV_VAR:-nope}"
