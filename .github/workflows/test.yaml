@@ -8,14 +8,25 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             -
+                name: 💳 Checkout
+                uses: actions/checkout@v2
+            -
                 name: ✍️ Logging it
                 run: |
+                    echo "→ Files:"
+                    ls -F
                     echo "A set variable: ${MY_OWN_ENV_VAR} and an unset one: ${MY_OTHER_ENV_VAR:-nope}"
                     echo "Workflow: ${GITHUB_WORKFLOW}"
                     echo "Repository + owner: ${GITHUB_REPOSITORY}"
                     echo "Event name: ${GITHUB_EVENT_NAME}"
                     echo "Workspace: ${GITHUB_WORKSPACE}"
                     echo "SHA and ref: ${GITHUB_SHA}, ${GITHUB_REF:-nope}"
+                    echo "→ Tags description:"
+                    git describe --tags ||:
+                    echo "→ All description:"
+                    git describe --all ||:
+                    echo "→ Branch:"
+                    git branch --show-current
                 env:
                     MY_OWN_ENV_VAR: Gerald
 
